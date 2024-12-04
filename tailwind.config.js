@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         'sans': ['Saira', ...defaultTheme.fontFamily.sans],
       },
+
       extend: {
         colors: {
           'petrol-100':'#E3F5FA',
@@ -26,8 +27,10 @@ module.exports = {
 
 
   variants: {
+    
     extend: {
       backgroundColor: ["active"],
+      ringColor: ['focus'],
     },
   },
 
