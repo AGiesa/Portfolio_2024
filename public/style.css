@@ -1566,11 +1566,6 @@ input:checked + .toggle-bg{
   line-height: 2.25rem;
 }
 
-.text-black{
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
 .text-blue-600{
   --tw-text-opacity: 1;
   color: rgb(28 100 242 / var(--tw-text-opacity));
@@ -1811,11 +1806,6 @@ input:checked + .toggle-bg{
 
 .dark\:bg-gray-900\/80:is(.dark *){
   background-color: rgb(17 24 39 / 0.8);
-}
-
-.dark\:bg-slate-900:is(.dark *){
-  --tw-bg-opacity: 1;
-  background-color: rgb(15 23 42 / var(--tw-bg-opacity));
 }
 
 .dark\:text-blue-500:is(.dark *){
