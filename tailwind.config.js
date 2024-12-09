@@ -4,6 +4,9 @@ module.exports = {
   content: ["./public/**/*.{html,js}",
     "./node_modules/flowbite/**/*.js"
   ],
+  
+  darkMode: 'class',
+
   theme: {
 
       fontFamily: {
@@ -36,5 +39,6 @@ module.exports = {
 
   plugins: [
     require('flowbite/plugin')
+    
   ],
 }

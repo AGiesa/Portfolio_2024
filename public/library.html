@@ -6,8 +6,18 @@
     <link rel="icon" href="/public/assets/Favicon light.png" type="img/x-icon">
     <title>Anette Giesa Portfolio</title>
     <link href="style.css" rel="stylesheet"/>
+
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+
 </head>
-<body>
+<body class="bg-white dark:bg-slate-900">
     <div class="container">
         <h1>Library components</h1><br>
         <h2>Menu buttons</h2><br>
@@ -24,12 +34,13 @@
                         Work</a>
                 </li>
                 <li class="block bg-transparent active:bg-petrol-100 active:text-petrol-700 rounded-md border-b-2 border-transparent hover:border-petrol-700">
-                    <a href="#" class="inline-block py-2 px-3 focus:ring-petrol-700">
+                    <a href="#" role="button" class="inline-block py-2 px-3 bg-transparent active:bg-petrol-200 rounded-md focus-visible:ring-2 focus-visible:ring-petrol-700 focus-visible:outline-none">
                     <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inline mr-2 fill-current">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12ZM11 9.79998C11 9.52384 11.2239 9.29998 11.5 9.29998H12.5C12.7761 9.29998 13 9.52384 13 9.79998V16.5C13 16.7761 12.7761 17 12.5 17H11.5C11.2239 17 11 16.7761 11 16.5V9.79998ZM11.5 5.99996C11.2239 5.99996 11 6.22382 11 6.49996V7.69996C11 7.9761 11.2239 8.19996 11.5 8.19996H12.5C12.7761 8.19996 13 7.9761 13 7.69996V6.49996C13 6.22382 12.7761 5.99996 12.5 5.99996H11.5Z"/>
                   </svg>About</a>
                 </li>
-                <li class="py-2 px-3 bg-transparent active:bg-petrol-200 active:text-petrol-700 rounded-md border-b-2 border-transparent hover:border-petrol-700 "><a href="#" class="inline-block">
+                <li class="block bg-transparent active:bg-petrol-100 active:text-petrol-700 rounded-md border-b-2 border-transparent hover:border-petrol-700">
+                    <a href="#" role="button" class="inline-block py-2 px-3 bg-transparent active:bg-petrol-200 rounded-md focus-visible:ring-2 focus-visible:ring-petrol-700 focus-visible:outline-none">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"  class="inline mr-2 fill-current">
                         <path d="M11.7933 14.5384L9.25001 12.7076L2.19804 17.8769C2.42926 18.0923 2.77607 18.2 3.2385 18.2H20.4638C20.8106 18.2 21.1574 17.9846 21.5043 17.8769L14.1055 12.7076L11.7933 14.5384Z"/>
                         <path d="M21.273 4.52303C20.9262 4.30764 20.5794 4.19995 20.2326 4.19995H3.00729C2.66047 4.19995 2.31365 4.30764 2.19804 4.63072L11.7933 12.3846L21.273 4.52303Z"/>
@@ -41,6 +52,14 @@
             </ul>
         </div>
         </nav>
+        <br>
+        
+        <h2>theme toggle button</h2><br>
+        <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+            <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+        </button>
+
     </div>
 
 
